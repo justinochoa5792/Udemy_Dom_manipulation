@@ -21,3 +21,16 @@ for (let color of colors) {
   container.appendChild(box);
   box.addEventListener("click", changeColor);
 }
+
+const addItem = document.querySelector("#addItem");
+const itemsUl = document.querySelector("#items");
+
+addItem.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    const newItemText = this.value;
+    const newItem = document.createElement("li");
+    newItem.innerText = newItemText;
+    itemsUl.appendChild(newItem);
+    this.value = "";
+  }
+});
